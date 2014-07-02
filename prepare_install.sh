@@ -43,7 +43,6 @@ function install_required_packages {
     echo -e "\nInstall required packages... \c"
     pkgs="binutils compat-libcap1 compat-libstdc++-33 gcc gcc-c++ glibc glibc-devel libgcc libstdc++ libaio libaio-devel libXext libXtst libX11 libXau libxcb libXi make sysstat tigervnc-server"
     yum install -y pkgs
-    yum groupinstall -y Desktop
     echo "done."
 }
 
