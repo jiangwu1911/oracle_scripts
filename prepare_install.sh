@@ -52,7 +52,7 @@ function add_user_and_group {
     groupadd dba
     groupadd oper
     mkdir -p /u01/oracle
-    useradd -g oinstall -Gdba,oper -d /home/oracle oracle
+    useradd -g oinstall -Gdba,oper -d /u01/oracle oracle
     passwd oracle <<EOF
 $ORACLE_PASSWORD
 $ORACLE_PASSWORD
@@ -61,7 +61,7 @@ EOF
 
     cat >>/u01/oracle/.bash_profile <<EOF
 ORACLE_BASE=/u01
-ORACLE_HOME=\$ORACLE_HOME/oracle
+ORACLE_HOME=\$ORACLE_BASE/oracle
 ORACLE_SID=orcl
 PATH=\$ORACLE_HOME/bin:\$PATH
 umask 022
